@@ -162,14 +162,14 @@ def end(): # This function controls the ending to see if the user would like to 
 
     end = True
     
-    again = input("Would you like to play again? ")
+    again = input("Would you like to play again? ").lower()
 
     while end == True:
         if again == "yes":
             amountQ1() # goes to the amountQ1 function to follow its code
         if again == "no":
             exit() # Exits and ends the program
-        again = input("Would you like to play again? ")
+        again = input("Would you like to play again? ").lower()
 
 def amountQ1(): # This function controls when and where everything is in the order
 
@@ -186,6 +186,7 @@ def amountQ1(): # This function controls when and where everything is in the ord
             question4()
             question5()
             question6()
+            end()
         if user_num == "10": # goes to and follows the code in those fuctions only if the user enters 10
             startQ2()
             question1()
@@ -198,6 +199,7 @@ def amountQ1(): # This function controls when and where everything is in the ord
             question8()
             question9()
             question10()
+            end()
         user_num = input("Would you like 6 questions or 10? ")
 
 print('Welcome to the lord of the rings quiz, this quiz will test you and your knowledge of the lord of the rings. But first...')
