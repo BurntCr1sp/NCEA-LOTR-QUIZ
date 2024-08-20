@@ -3,6 +3,7 @@ import os # Imports os to be used later in the code
 
 # Constants
 TITLE = 'LORD OF THE RINGS QUIZ'
+USER_AWNSER = 'Your awnser: '
 
 print('')
 print(TITLE)
@@ -22,7 +23,13 @@ def question1(): # This function controls the first question and all its options
     print('')
     print(options[1])
     print('')
-    Q1 = input('Your awnser: ')
+    Q1 = input(USER_AWNSER)
+    submit = input('To submit type "submit" and if not type "retry": ').lower()
+    if submit == 'retry':
+        print('Ok')
+        time.sleep(1)
+        os.system('clear')
+        question1()
     if Q1 == awnsers[1]:
         print('Correct')
         corrects.append('Correct')
@@ -39,7 +46,13 @@ def question2(): # This function controls the second question and all its option
     print('')
     print(options[3])
     print('')
-    Q2 = input('your awnser: ')
+    Q2 = input(USER_AWNSER)
+    submit = input('To submit type "submit" and if not type "retry": ').lower()
+    if submit == 'retry':
+        print('Ok')
+        time.sleep(1)
+        os.system('clear')
+        question2()
     if Q2 == awnsers[3]:
         print('Correct')
         corrects.append('Correct')
@@ -56,7 +69,13 @@ def question3(): # This function controls the third question and all its options
     print('')
     print(options[5])
     print('')
-    Q3 = input('your awnser: ')
+    Q3 = input(USER_AWNSER)
+    submit = input('To submit type "submit" and if not type "retry": ').lower()
+    if submit == 'retry':
+        print('Ok')
+        time.sleep(1)
+        os.system('clear')
+        question3()
     if Q3 == awnsers[5]:
         print('Correct')
         corrects.append('Correct')
@@ -73,7 +92,13 @@ def question4(): # This function controls the fourth question and all its option
     print('')
     print(options[7])
     print('')
-    Q4 = input('your awnser: ')
+    Q4 = input(USER_AWNSER)
+    submit = input('To submit type "submit" and if not type "retry": ').lower()
+    if submit == 'retry':
+        print('Ok')
+        time.sleep(1)
+        os.system('clear')
+        question4()
     if Q4 == awnsers[7]:
         print('Correct')
         corrects.append('Correct')
@@ -90,7 +115,13 @@ def question5(): # This function controls the fifth question and all its options
     print('')
     print(options[9])
     print('')
-    Q5 = input('your awnser: ')
+    Q5 = input(USER_AWNSER)
+    submit = input('To submit type "submit" and if not type "retry": ').lower()
+    if submit == 'retry':
+        print('Ok')
+        time.sleep(1)
+        os.system('clear')
+        question5()
     if Q5 == awnsers[9]:
         print('Correct')
         corrects.append('Correct')
@@ -107,7 +138,13 @@ def question6(): # This function controls the sixth question and all its options
     print('')
     print(options[11])
     print('')
-    Q6 = input('your awnser: ')
+    Q6 = input(USER_AWNSER)
+    submit = input('To submit type "submit" and if not type "retry": ').lower()
+    if submit == 'retry':
+        print('Ok')
+        time.sleep(1)
+        os.system('clear')
+        question6()
     if Q6 == awnsers[11]:
         print('Correct')
         corrects.append('Correct')
@@ -124,7 +161,13 @@ def question7(): # This function controls the seventh question and all its optio
     print('')
     print(options[13])
     print('')
-    Q3 = input('your awnser: ')
+    Q3 = input(USER_AWNSER)
+    submit = input('To submit type "submit" and if not type "retry": ').lower()
+    if submit == 'retry':
+        print('Ok')
+        time.sleep(1)
+        os.system('clear')
+        question7()
     if Q3 == awnsers[13]:
         print('Correct')
         corrects.append('Correct')
@@ -141,7 +184,13 @@ def question8(): # This function controls the eighth question and all its option
     print('')
     print(options[15])
     print('')
-    Q4 = input('your awnser: ')
+    Q4 = input(USER_AWNSER)
+    submit = input('To submit type "submit" and if not type "retry": ').lower()
+    if submit == 'retry':
+        print('Ok')
+        time.sleep(1)
+        os.system('clear')
+        question8()
     if Q4 == awnsers[15]:
         print('Correct')
         corrects.append('Correct')
@@ -158,7 +207,13 @@ def question9(): # This function controls the ninth question and all its options
     print('')
     print(options[17])
     print('')
-    Q5 = input('your awnser: ')
+    Q5 = input(USER_AWNSER)
+    submit = input('To submit type "submit" and if not type "retry": ').lower()
+    if submit == 'retry':
+        print('Ok')
+        time.sleep(1)
+        os.system('clear')
+        question9()
     if Q5 == awnsers[17]:
         print('Correct')
         corrects.append('Correct')
@@ -175,7 +230,13 @@ def question10(): # This function controls the tenth question and all its option
     print('')
     print(options[19])
     print('')
-    Q6 = input('your awnser: ')
+    Q6 = input(USER_AWNSER)
+    submit = input('To submit type "submit" and if not type "retry": ').lower()
+    if submit == 'retry':
+        print('Ok')
+        time.sleep(1)
+        os.system('clear')
+        question10()
     if Q6 == awnsers[19]:
         print('Correct')
         corrects.append('Correct')
@@ -206,25 +267,17 @@ def startQ2(): # This function controls the starting question 2
         time.sleep(3)# Makes the program wait 3 seconds before continuing to run
     os.system('clear') # Clears the terminal which helps to seperate questions and make things look less messy
 
-def passfail():
+def passfail(): # This function controls the score and prints it at the end of each game. It also says whether or not its a pass
     look_for = 'Correct'
     score = corrects.count(look_for)
-
-    if user_num == 6 and score <= 3:
+    if int(user_num) * 0.5 < int(score):
         print('You got a score of',score,)
-        print('Fail')
-
-    elif user_num == 6 and score > 3:
+        print('You pass')
+        print('')
+    else:
         print('You got a score of',score,)
-        print('Pass')
-
-    elif user_num == 10 and score <= 5:
-        print('You got a score of',score,)
-        print('Fail')
-
-    elif user_num == 10 and score > 5:
-        print('You got a score of',score,)
-        print('Pass')
+        print("You Fail")
+        print('')
 
 def end(): # This function controls the ending to see if the user would like to start over
 
